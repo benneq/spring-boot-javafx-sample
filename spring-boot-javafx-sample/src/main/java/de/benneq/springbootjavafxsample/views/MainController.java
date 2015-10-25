@@ -7,17 +7,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import de.benneq.springbootjavafxsample.common.FXMLController;
+import de.benneq.springbootjavafxsample.model.GlobalModel;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 
 @Component
 public class MainController extends FXMLController implements Initializable {
 	@Autowired View1Controller view1;
 	@Autowired View2Controller view2;
+	@Autowired GlobalModel model;
 	
 	@FXML Pane content;
+	@FXML TextField text;
 	
 	
 	public MainController() {
@@ -27,6 +31,7 @@ public class MainController extends FXMLController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		showView1(null);
+		text.textProperty().bindBidirectional(model.getTextProperty());
 	}
 	
 	@FXML
