@@ -22,6 +22,7 @@ public class MainController extends FXMLController implements Initializable {
 	
 	@FXML Pane content;
 	@FXML TextField text;
+
 	
 	
 	public MainController() {
@@ -44,6 +45,10 @@ public class MainController extends FXMLController implements Initializable {
 	public void showView2(Event event) {
 		content.getChildren().clear();
 		content.getChildren().add(view2.getView());
+	}
+	
+	public TextField getText() {
+		return text;
 	}
 	
 }

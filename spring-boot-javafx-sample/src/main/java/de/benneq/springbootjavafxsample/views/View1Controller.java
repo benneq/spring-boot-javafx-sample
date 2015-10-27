@@ -29,4 +29,8 @@ public class View1Controller extends FXMLController implements Initializable {
 		text.textProperty().bindBidirectional(model.getTextProperty());
 	}
 	
+	public TextField getText() {
+		return text;
+	}
+	
 }
